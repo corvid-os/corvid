@@ -83,7 +83,14 @@ skompresować wszystko do 3 plików w osobnym, prywatnym repo:
 - `design.md` — ostateczny, scalony design systemu
 - `code.md` — kod (instalator, konfiguracja archiso, itd.)
 
+## Licencje
+✅ Plik `LICENSE` dodany do wszystkich 5 repo:
+
+| Repo | Licencja | Powód |
+|---|---|---|
+| `corvid`, `installer`, `pkgbuilds` | **MIT** | nasz własny kod — proste, permisywne |
+| `iso`, `branding` | **GPL-3.0** | zawierają/integrują config Hyprlanda z [minimaLinux](https://github.com/Echilonvibin/minimaLinux) (GPL-3.0) — musi zostać ta sama licencja, bez tego konflikt licencyjny |
+
 ## Otwarte tematy (globalne TBD, nie przypisane do jednego pliku)
 - CI/CD dla budowania ISO i publikowania paczek
 - Wersjonowanie wydań ISO (rolling vs snapshoty wydań, schemat numeracji)
-- Licencja projektu (do wyboru — MIT jako naturalny domyślny wybór dla kodu własnego)
