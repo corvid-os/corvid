@@ -5,7 +5,20 @@ i codzienny desktop w jednym. GNOME lub Hyprland do wyboru przy instalacji, wła
 modularny instalator (Python + GTK4/libadwaita), Btrfs + snapper + grub-btrfs,
 pacman + paru.
 
-## Struktura repo
+## Repozytoria organizacji [`corvid-os`](https://github.com/corvid-os)
+
+Projekt jest podzielony na osobne repo per komponent — każde do pobrania/wersjonowania
+niezależnie:
+
+| Repo | Zawartość |
+|---|---|
+| **`corvid`** *(to repo)* | meta/dokumentacja, ewolucja promptu/designu |
+| [`installer`](https://github.com/corvid-os/installer) | Corvid Installer — Python + GTK4/libadwaita |
+| [`iso`](https://github.com/corvid-os/iso) | profil `archiso` do budowania Live/Install ISO |
+| [`branding`](https://github.com/corvid-os/branding) | logo, ikony, motywy Plymouth/GRUB, tapety, paleta |
+| [`pkgbuilds`](https://github.com/corvid-os/pkgbuilds) | PKGBUILDy / własne repo pakietów (`corvid-*`) |
+
+## Struktura tego repo
 
 - [`prompt-el/`](./prompt-el) — **folder roboczy z ewolucją promptu/designu.**
   Tu na bieżąco powstają notatki, decyzje projektowe, propozycje itd. Docelowo

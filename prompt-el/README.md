@@ -14,6 +14,7 @@ skompresowane do 3 i przeniesione do osobnego, prywatnego repo:
 |---|---|
 | [`design.md`](./design.md) | szkic decyzji projektowych, sekcje `TBD` do uzupełnienia |
 | [`naming.md`](./naming.md) | propozycje nazwy/brandingu |
+| [`apps.md`](./apps.md) | lista aplikacji — Live ISO (ustalone) i post-instalacja (TBD) |
 | [`wiki.md`](./wiki.md) | notatki/fragmenty z Arch Wiki i innej dokumentacji |
 | [`links.md`](./links.md) | same linki referencyjne, bez komentarza |
 

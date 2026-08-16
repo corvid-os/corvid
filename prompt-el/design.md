@@ -43,12 +43,23 @@ Arch Linux (rolling release), budowa ISO przez `archiso`.
 
 ## Infrastruktura / GitHub
 - Organizacja: **[`corvid-os`](https://github.com/corvid-os)** (kontakt: `corvid-os@proton.me`)
-- Repo robocze: **[`corvid-os/corvid`](https://github.com/corvid-os/corvid)** — publiczne, zawiera folder `prompt-el/` z ewolucją designu
-- TBD: czy zostajemy przy jednym repo `corvid` w organizacji, czy dzielimy na osobne repo (installer, archiso profile, custom repo pakietów) — decyzja gdy zaczniemy pisać kod
+- ✅ Decyzja: **multi-repo**, nie jeden monolit — każdy komponent osobno do pobrania/wersjonowania:
 
-## Zestaw predefiniowanych aplikacji
-TBD — do ustalenia jakie apki domyślnie (przeglądarka, edytor/IDE, narzędzia
-gamingowe typu Steam/Proton/gamemode, narzędzia dev typu git/kontenery, itd.)
+| Repo | Zawartość |
+|---|---|
+| [`corvid`](https://github.com/corvid-os/corvid) | meta/dokumentacja, ewolucja promptu (`prompt-el/`), docelowo `prompt.md`/`design.md`/`code.md` |
+| [`installer`](https://github.com/corvid-os/installer) | **Corvid Installer** — Python + GTK4/libadwaita, modularny |
+| [`iso`](https://github.com/corvid-os/iso) | profil `archiso` do budowania Live/Install ISO (spina installer, branding, listę apek live) |
+| [`branding`](https://github.com/corvid-os/branding) | logo, ikony, motyw Plymouth/GRUB, tapety, paleta kolorów |
+| [`pkgbuilds`](https://github.com/corvid-os/pkgbuilds) | PKGBUILDy / custom repo pakietów (`corvid-*`, patche gamingowe itd.) |
+
+- TBD: CI/CD do automatycznego budowania ISO i publikowania paczek
+
+## Aplikacje
+- ✅ Zestaw dla **Live ISO** ustalony — patrz [`apps.md`](./apps.md)
+- Zestaw **predefiniowanych aplikacji po instalacji** (przeglądarka, edytor/IDE,
+  narzędzia gamingowe typu Steam/Proton/gamemode, narzędzia dev typu git/kontenery)
+  — TBD, patrz [`apps.md`](./apps.md) (sekcja placeholder)
 
 ## Własne repozytorium pakietów
 TBD — czy robimy własne repo (wzorem Chaotic-AUR/CachyOS), co by w nim siedziało
