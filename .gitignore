@@ -1,0 +1,8 @@
+# Lokalne klony pozostałych repo organizacji corvid-os — trzymane tu dla
+# wygody pracy w jednym folderze, ale to osobne repo z własnym .git, nie
+# część historii tego repo.
+/installer/
+/iso/
+/branding/
+/pkgbuilds/
+/prompt-el/
