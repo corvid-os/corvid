@@ -13,7 +13,7 @@ Finalizacja sekcji "Post-instalacja" z `apps.md`. Zestawy powiązane z krokiem
 | Odtwarzacz multimediów | `mpv` | lekki, uniwersalny |
 | Przeglądarka zdjęć | `loupe` (GNOME) / `imv` (Hyprland) | — |
 | Archiwizator | `file-roller` / `xarchiver` | zip/tar/itd. |
-| LibreOffice *(TBD czy pełny pakiet czy tylko Writer/Calc)* | `libreoffice-fresh` | podstawowa edycja dokumentów |
+| LibreOffice | ✅ `libreoffice-fresh` (pełny pakiet) | Writer, Calc, Impress, Draw, Base, Math — kompletny pakiet biurowy od razu, bez doinstalowywania modułów |
 
 ## Profil Gaming (dodatkowo)
 Patrz `gaming.md` → pakiet `corvid-gaming` (Steam, gamemode, mangohud, Proton-GE
@@ -33,7 +33,6 @@ wyżej — bez Gaming/Dev. Dla użytkowników chcących lekkiego, czystego syste
 doinstalowania wszystkiego ręcznie później.
 
 ## TBD
-- LibreOffice pełny pakiet vs tylko wybrane komponenty (rozmiar instalacji)
 - Czy Core zawiera cokolwiek do komunikacji (Discord? — kontrowersyjne jako "domyślne",
   raczej NIE preinstalować, zostawić do doinstalowania)
 - Klient poczty — raczej nie domyślnie (większość używa web/Firefoxa)
