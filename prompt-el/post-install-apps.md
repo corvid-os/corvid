@@ -21,7 +21,7 @@ przez protonup-qt, sterowniki kontrolerów).
 
 ## Profil Dev (dodatkowo)
 Patrz `dev-environment.md` → pakiet `corvid-dev` (fish+starship, Podman, git+delta+lazygit+gh,
-VS Code/VSCodium, neovim, mise).
+VSCodium, neovim, mise).
 
 ## Profil "Oba" (Gaming + Dev)
 Suma `corvid-gaming` + `corvid-dev` — bez konfliktów pakietowych (różne przestrzenie:

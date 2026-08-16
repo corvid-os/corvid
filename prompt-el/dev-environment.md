@@ -26,9 +26,13 @@ Rozwinięcie profilu *Dev* z `installer-steps.md` (krok 8) i `package-management
   sensowne żeby był pod ręką od razu
 
 ## Edytor / IDE
-- **VS Code** (pakiet `code` z AUR/repo — NIE `code` z Microsoft marketplace-owym
-  telemetry blobem bez namysłu; do ustalenia dokładnie która paczka: `visual-studio-code-bin`
-  vs w pełni open-source `vscodium`) — domyślny GUI edytor/IDE
+- ✅ **VSCodium** (pakiet `vscodium-bin` z AUR) — domyślny GUI edytor/IDE. Wybrany
+  zamiast VS Code świadomie: ten sam kod źródłowy (Code-OSS, MIT), ale bez
+  telemetrii Microsoftu wbudowanej w binarkę i bez własnościowej warstwy —
+  spójne z resztą filozofii projektu (własny instalator zamiast Calamares,
+  Podman zamiast Dockera). Domyślny rejestr rozszerzeń: **Open VSX**
+  (ograniczenie: część oficjalnych rozszerzeń MS, np. C/C++, nie jest tam
+  dostępna/wspierana — użytkownik może ręcznie dodać inny rejestr na własne ryzyko)
 - **neovim** — zawsze obecny jako edytor terminalowy (fallback, szybkie edycje configów)
 
 ## Menedżer wersji językowych
@@ -43,7 +47,6 @@ Rozwinięcie profilu *Dev* z `installer-steps.md` (krok 8) i `package-management
   i paletą kolorów, żeby doświadczenie było spójne niezależnie od DE
 
 ## TBD
-- VSCodium vs VS Code (kompromis: wygoda/rozszerzenia Marketplace vs pełna otwartość)
 - Czy dorzucamy `docker` alias na `podman`, czy zostawiamy jawny wybór usera
 - Czy `corvid-dev` instaluje jakiekolwiek kompilatory/runtime domyślnie (np. `base-devel`
   już jest w `corvid-base` — patrz `package-management.md` — więc gcc/make już jest)
