@@ -20,6 +20,7 @@ do wszystkich plików poniżej, pogrupowany tematycznie.
 | [`branding-palette.md`](./branding-palette.md) | paleta kolorów (hex), typografia, logo, ikony |
 | [`desktop-gnome.md`](./desktop-gnome.md) | GNOME: rozszerzenia, motyw, dconf, domyślne apki |
 | [`desktop-hyprland.md`](./desktop-hyprland.md) | Hyprland: stack, keybindy, dystrybucja configów |
+| [`onboarding.md`](./onboarding.md) | ekran powitalny przy pierwszym uruchomieniu (GNOME/Hyprland) |
 | [`installer-steps.md`](./installer-steps.md) | 14 kroków instalatora, krok po kroku |
 | [`installer-architecture.md`](./installer-architecture.md) | struktura kodu, wzorzec kroku, backend |
 | [`package-management.md`](./package-management.md) | pacman/paru config, mirrorlist, grupy metapaczek |

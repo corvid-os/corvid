@@ -18,6 +18,7 @@ Arch Linux (rolling release), budowa ISO przez `archiso`.
 - Live ISO / instalator: **GNOME**; do wyboru przy instalacji: **GNOME** albo **Hyprland**
 - Szczegóły GNOME (rozszerzenia, motyw, dconf) — [`desktop-gnome.md`](./desktop-gnome.md)
 - Szczegóły Hyprland (stack, keybindy, configi) — [`desktop-hyprland.md`](./desktop-hyprland.md)
+- Ekran powitalny przy pierwszym uruchomieniu (GNOME i Hyprland) — [`onboarding.md`](./onboarding.md)
 
 ## Instalator — Corvid Installer
 - Python, modularny, GUI GTK4 + libadwaita (spójne z GNOME live ISO)

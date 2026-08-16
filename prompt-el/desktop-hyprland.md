@@ -1,9 +1,16 @@
 # Środowisko graficzne — Hyprland
 
-✅ Bazujemy na realnych, prywatnych dotfiles: **[`Lion15official/dotfiles`](https://github.com/Lion15official/dotfiles)**
-("Hyprland / Noctalia dotfiles") — przetestowany na co dzień setup, nie
-wymyślamy configu od zera. Poniżej rozbiór tego co tam jest i jak to
-przekłada się na domyślny Hyprland w Corvid.
+✅ **Nie jest to nasz autorski config.** Bazą domyślnego Hyprlanda w Corvid OS
+jest publiczny projekt **[Echilonvibin/minimaLinux](https://github.com/Echilonvibin/minimaLinux)**
+(licencja **GPL-3.0**) — "minimalny starter dla Hyprland, świeży punkt wyjścia
+do personalizacji, bez bloatu". Pełny kredyt dla autora, żadnych roszczeń do
+tego configu — Corvid tylko go integruje i (ewentualnie) dostosowuje kolorystykę
+pod branding. Rozpoznaliśmy ten stack, bo dotfiles usera są jego personalną
+customizacją tego właśnie projektu — poniżej rozbiór tego co w nim jest.
+
+**Ważne przez GPL-3.0**: jeśli Corvid pakuje/dystrybuuje ten config (nawet
+zmodyfikowany), pakiet z nim musi zostać na GPL-3.0 i zawierać źródło + link
+do oryginału — nie ma tu miejsca na relicencjonowanie.
 
 ## Komponenty stacka (z realnego configu)
 
@@ -58,12 +65,21 @@ Filozofia: `SUPER` jako jedyny główny modyfikator, nawigacja strzałkami (nie
 vim-style hjkl — realny setup tego nie używa, więc nie narzucamy tego w
 domyślnym configu Corvid).
 
-## Pochodzenie configu / plan wdrożenia w Corvid
-- Źródło: prywatne repo [`Lion15official/dotfiles`](https://github.com/Lion15official/dotfiles)
-- Plan: zaadaptować jako pakiet dystrybucyjny (patrz TBD — które repo/paczka),
-  z usunięciem elementów osobistych (zawartość `Pictures/`, cokolwiek
-  specyficznego dla maszyny/danych usera), zachowując szkielet Lua configu
-  jako bazę domyślną w Corvid
+## Instalacja / zależności
+- minimaLinux jest napisany pod **świeży, czysty Arch** (z profilem Hyprland
+  z `archinstall`) — dokładnie to co robi nasz instalator, więc integracja
+  powinna być prosta (patrz `iso`/`installer`)
+- Instaluje **Chaotic-AUR** jako zależność — jedyny pakiet stamtąd to sama
+  **Noctalia** (AUR-only, nie ma jej w oficjalnych repo Arch)
+- TBD: czy Corvid dociąga Chaotic-AUR na produkcyjnym systemie (dodatkowe,
+  zewnętrzne, niezaufane-przez-nas repo), czy budujemy własny pakiet Noctalii
+  we własnym `pkgbuilds` (patrz `custom-repo.md`) i unikamy zależności od
+  zewnętrznego repo trzeciej strony
+
+## Pierwsze uruchomienie
+Przy pierwszym starcie Hyprlanda w świeżo zainstalowanym Corvid — patrz
+**[`onboarding.md`](./onboarding.md)** (link do wideo z personalizacją +
+repo źródłowego).
 
 ## TBD
 - Stała paleta `corvid-violet` narzucona na Noctalię, czy zostawiamy dynamiczne
@@ -78,7 +94,5 @@ domyślnym configu Corvid).
 - Nautilus vs Thunar — potwierdzić ostatecznie Thunar jako domyślny dla ścieżki
   Hyprland (aktualizacja `post-install-apps.md`), i sprawdzić czy Thunar
   wymaga dodatkowych GVFS-backendów dla montowania dysków/MTP itd.
-- Docelowe repo/pakiet: nowe osobne repo (`corvid-os/hyprland-dotfiles`) czy
-  wchodzi do istniejącego `branding`/`pkgbuilds`
-- Licencja adaptowanego configu (dotfiles usera są prywatne — do ustalenia
-  pod jaką licencją trafiają do publicznego Corvid)
+- Chaotic-AUR jako zależność vs własny pakiet Noctalii — patrz sekcja
+  Instalacja/zależności wyżej
