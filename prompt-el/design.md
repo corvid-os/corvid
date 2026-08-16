@@ -42,8 +42,8 @@ Arch Linux (rolling release), budowa ISO przez `archiso`.
 - TBD: logo/maskotka (konkretny design), motyw Plymouth, motyw GRUB, tapety, konkretna paleta (hex), ikony
 
 ## Infrastruktura / GitHub
-- Repo robocze: [`Lion15official/corvid`](https://github.com/Lion15official/corvid) — publiczne, zawiera folder `prompt-el/` z ewolucją designu
-- Docelowo: organizacja **`corvid-os`** na GitHubie (do założenia ręcznie przez ownera — GitHub nie udostępnia tworzenia orgów przez API na koncie darmowym), repo `corvid` przeniesione tam
+- Organizacja: **[`corvid-os`](https://github.com/corvid-os)** (kontakt: `corvid-os@proton.me`)
+- Repo robocze: **[`corvid-os/corvid`](https://github.com/corvid-os/corvid)** — publiczne, zawiera folder `prompt-el/` z ewolucją designu
 - TBD: czy zostajemy przy jednym repo `corvid` w organizacji, czy dzielimy na osobne repo (installer, archiso profile, custom repo pakietów) — decyzja gdy zaczniemy pisać kod
 
 ## Zestaw predefiniowanych aplikacji
