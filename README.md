@@ -12,23 +12,20 @@ niezależnie:
 
 | Repo | Zawartość |
 |---|---|
-| **`corvid`** *(to repo)* | meta/dokumentacja, ewolucja promptu/designu |
+| **`corvid`** *(to repo)* | meta/dokumentacja |
 | [`installer`](https://github.com/corvid-os/installer) | Corvid Installer — Python + GTK4/libadwaita |
 | [`iso`](https://github.com/corvid-os/iso) | profil `archiso` do budowania Live/Install ISO |
 | [`branding`](https://github.com/corvid-os/branding) | logo, ikony, motywy Plymouth/GRUB, tapety, paleta |
 | [`pkgbuilds`](https://github.com/corvid-os/pkgbuilds) | PKGBUILDy / własne repo pakietów (`corvid-*`) |
+| `prompt-el` *(prywatne)* | pełna specyfikacja projektu (`prompt.md`/`design.md`/`code.md`) + historia decyzji |
 
-## Struktura tego repo
+## Design
 
-- [`prompt-el/`](./prompt-el) — **folder roboczy z ewolucją promptu/designu.**
-  Tu na bieżąco powstają notatki, decyzje projektowe, propozycje itd. Docelowo
-  ten folder zostanie skompresowany do 3 plików (`prompt.md`, `design.md`, `code.md`)
-  i przeniesiony do osobnego, prywatnego repo — to co tu widać to etap roboczy,
-  publiczny tymczasowo.
-
-Zobacz [`prompt-el/README.md`](./prompt-el/README.md) po szczegóły plików roboczych.
+Pełny design systemu żyje w prywatnym repo `corvid-os/prompt-el` (`design.md`) —
+etap burzy mózgów z rozproszonymi plikami roboczymi (`prompt-el/` który był tu
+wcześniej) został skompresowany i przeniesiony tam po zamknięciu fazy design (M0).
 
 ## Status
 
-Wczesna faza projektowa — ustalamy design, branding i architekturę zanim
-zabierzemy się za kod (instalator, profil archiso, custom repo pakietów).
+Design (M0) zamknięty. W trakcie: szkielet instalatora (M1) — patrz
+`code.md` w `corvid-os/prompt-el` i roadmapę w `design.md`.
