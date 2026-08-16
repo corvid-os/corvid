@@ -14,7 +14,7 @@ się na instalację.
 | GNOME Console | `gnome-console` | terminal — dostęp do `pacman`, `lsblk`, ręcznej diagnostyki |
 | GNOME Text Editor | `gnome-text-editor` | szybka edycja configów (np. ręczna edycja `fstab`, `sshd_config` w trybie ratunkowym) |
 | Firefox | `firefox` | internet — dokumentacja, forum, sprawdzenie że Wi-Fi/sieć działa przed instalacją |
-| GParted | `gparted` | ręczny partycjoner dla zaawansowanych — alternatywa/uzupełnienie kroku partycjonowania w instalatorze |
+| GNOME Disks | `gnome-disk-utility` | ręczny partycjoner dla zaawansowanych — natywne narzędzie GNOME zamiast własnego/GParted, mniej do utrzymania, spójne z resztą live session |
 | GNOME System Monitor | `gnome-system-monitor` | podgląd RAM/CPU/dysków — przydatne przy starszym sprzęcie |
 | nm-applet / GNOME Wi-Fi | `network-manager-applet` (część GNOME Shell) | podłączenie do sieci przed instalacją |
 | htop | `htop` | terminalowy monitor procesów, fallback gdy GUI nie odpala |
