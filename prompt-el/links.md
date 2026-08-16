@@ -24,3 +24,7 @@ Same linki, bez komentarza — treść/kontekst do danego linku idzie do [`wiki.
 ## GTK4 / libadwaita
 - GTK4 docs — https://docs.gtk.org/gtk4/
 - libadwaita docs — https://gnome.pages.gitlab.gnome.org/libadwaita/doc/main/
+
+## Hyprland — źródło domyślnego configu Corvid
+- Dotfiles usera (prywatne, źródło `desktop-hyprland.md`) — https://github.com/Lion15official/dotfiles
+- Noctalia Shell — https://github.com/noctalia-dev/noctalia-shell

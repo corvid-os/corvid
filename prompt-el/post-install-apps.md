@@ -8,11 +8,11 @@ Finalizacja sekcji "Post-instalacja" z `apps.md`. Zestawy powiązane z krokiem
 | Aplikacja | Pakiet | Rola |
 |---|---|---|
 | Firefox | `firefox` | przeglądarka domyślna |
-| Menedżer plików | `nautilus` (GNOME) / `nautilus` też pod Hyprland (spójność) | pliki |
+| Menedżer plików | `nautilus` (GNOME) / **`thunar`** (Hyprland) | ✅ różne per DE — Thunar zgodnie z realnym setupem w `desktop-hyprland.md` (lżejszy, bez zależności GNOME) |
 | Terminal | patrz `dev-environment.md` (per DE) | — |
 | Odtwarzacz multimediów | `mpv` | lekki, uniwersalny |
 | Przeglądarka zdjęć | `loupe` (GNOME) / `imv` (Hyprland) | — |
-| Archiwizator | `file-roller` / `xarchiver` | zip/tar/itd. |
+| Archiwizator | `file-roller` (GNOME) / `xarchiver` (Hyprland, spójne z Thunar) | zip/tar/itd. |
 | LibreOffice | ✅ `libreoffice-fresh` (pełny pakiet) | Writer, Calc, Impress, Draw, Base, Math — kompletny pakiet biurowy od razu, bez doinstalowywania modułów |
 
 ## Profil Gaming (dodatkowo)
