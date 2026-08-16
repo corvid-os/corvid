@@ -25,10 +25,7 @@ się na instalację.
 - Opcjonalnie: okno powitalne przy starcie (styl GNOME Initial Setup / Ubuntu welcome) z wyborem: *Wypróbuj Live* / *Zainstaluj teraz*
 - TBD: czy robimy własny "welcome dialog" czy odpalamy installer wprost
 
-## Post-instalacja — zestaw domyślnych aplikacji
+## ✅ Post-instalacja — zestaw domyślnych aplikacji
 
-TBD — do ustalenia. Robocze kierunki do dyskusji w kolejnej turze:
-- **Podstawa** (niezależnie od profilu): przeglądarka, menedżer plików, terminal, edytor tekstu, odtwarzacz multimediów
-- **Gaming**: Steam, Proton (przez Steam), `gamemode`, `mangohud`, sterowniki GPU (TBD: automatyczna detekcja NVIDIA/AMD w instalatorze)
-- **Dev**: git, edytor/IDE (VS Code? TBD który), Docker/Podman (TBD który), baza narzędzi CLI (TBD lista)
-- TBD: czy to jeden wspólny zestaw dla wszystkich, czy instalator pyta o profil (gaming/dev/minimal) i dobiera pakiety
+Sfinalizowane — patrz dedykowany plik **[`post-install-apps.md`](./post-install-apps.md)**
+(zestawy Core/Gaming/Dev/Oba/Minimalny, powiązane z krokiem "Profil" w `installer-steps.md`).

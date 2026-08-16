@@ -1,7 +1,8 @@
-# Design distro
+# Design distro — indeks
 
-Szkic dokumentu projektowego. Zawiera tylko to, co już ustalone — reszta to
-sekcje `TBD` do uzupełnienia w kolejnych turach.
+Ten plik jest **skrótem/spisem treści** całego designu. Szczegóły każdego
+tematu żyją w dedykowanym pliku — to jest rozmyślne: łatwiej edytować,
+łatwiej przeglądać, mniejsze ryzyko konfliktów przy wspólnej pracy nad plikami.
 
 ## Cel / target
 Wszystko naraz, nie wąska nisza: ładny wygląd, gaming, deweloperka, codzienny desktop.
@@ -9,65 +10,79 @@ Wszystko naraz, nie wąska nisza: ładny wygląd, gaming, deweloperka, codzienny
 ## Baza
 Arch Linux (rolling release), budowa ISO przez `archiso`.
 
-## Środowisko graficzne
-- Live ISO / instalator: **GNOME**
-- Do wyboru przy instalacji: **GNOME** albo **Hyprland**
-- TBD: dokładny zestaw pakietów per DE (rozszerzenia GNOME, konfiguracja Hyprland/waybar/itd.)
+## Nazwa i branding
+- **Nazwa: Corvid OS** — [`naming.md`](./naming.md) (decyzja + historia odrzuconych nazw i dlaczego)
+- Paleta kolorów, typografia, logo, ikony — [`branding-palette.md`](./branding-palette.md)
 
-## Instalator
-- Własny, pisany w **Pythonie**, **modularny** — każdy krok instalacji to osobny moduł,
-  żeby dało się łatwo dodać kolejny krok bez rozrastania się jednego pliku do
-  kilku tysięcy linijek
-- GUI: **GTK4 + libadwaita** (spójne z GNOME live ISO)
+## Środowisko graficzne
+- Live ISO / instalator: **GNOME**; do wyboru przy instalacji: **GNOME** albo **Hyprland**
+- Szczegóły GNOME (rozszerzenia, motyw, dconf) — [`desktop-gnome.md`](./desktop-gnome.md)
+- Szczegóły Hyprland (stack, keybindy, configi) — [`desktop-hyprland.md`](./desktop-hyprland.md)
+
+## Instalator — Corvid Installer
+- Python, modularny, GUI GTK4 + libadwaita (spójne z GNOME live ISO)
 - Powód własnego instalatora zamiast Calamares: dokumentacja Calamares nie
   pasuje do tego jak chcemy to rozwijać
-- TBD: dokładna lista kroków instalatora (partycjonowanie, użytkownik, lokalizacja,
-  wybór DE, bootloader, itd.), struktura modułów
+- Pełny flow 14 kroków — [`installer-steps.md`](./installer-steps.md)
+- Architektura kodu (struktura katalogów, wzorzec kroku, backend) — [`installer-architecture.md`](./installer-architecture.md)
+- Repo: [`corvid-os/installer`](https://github.com/corvid-os/installer)
 
 ## Zarządzanie pakietami
-- `pacman` jako podstawa
-- `paru` jako AUR helper
+- `pacman` (multilib włączone) + `paru` jako AUR helper
+- Konfiguracja, mirrorlist, grupy metapaczek — [`package-management.md`](./package-management.md)
+- Własne repo pakietów (`corvid-*`, hosting, podpisywanie) — [`custom-repo.md`](./custom-repo.md)
+- Repo: [`corvid-os/pkgbuilds`](https://github.com/corvid-os/pkgbuilds)
 
 ## System plików / snapshoty
-- **Btrfs** jako domyślny system plików
-- **snapper** do automatycznych snapshotów
-- Integracja z **GRUB** przez `grub-btrfs` (bootowanie snapshotów z menu GRUB)
+- **Btrfs** + **snapper** + **grub-btrfs** (bootowanie snapshotów z menu GRUB)
+- Layout subwolumenów, harmonogram snapshotów, rollback — [`filesystem-btrfs-snapper.md`](./filesystem-btrfs-snapper.md)
 
-## Branding
-- **Nazwa: Corvid OS** (decyzja w [`naming.md`](./naming.md))
-- Instalator: **Corvid Installer**, binarka/prefiks: `corvid`
-- Prefiks pakietów własnego repo: `corvid-*`
-- Kolorystyka: **fiolet/indygo** jako akcent (nawiązanie do iridescencji piór kruka), ciemny motyw domyślny (z jasnym wariantem opcjonalnym)
-- Maskotka: kruk (motyw "corvid")
-- TBD: logo/maskotka (konkretny design), motyw Plymouth, motyw GRUB, tapety, konkretna paleta (hex), ikony
+## Aplikacje
+- Zestaw dla **Live ISO** — [`apps.md`](./apps.md)
+- Zestaw **po instalacji** (Core/Gaming/Dev/Oba/Minimalny) — [`post-install-apps.md`](./post-install-apps.md)
+
+## Gaming
+Kernel, sterowniki GPU, Steam/Proton/gamemode/mangohud, kontrolery — [`gaming.md`](./gaming.md)
+
+## Deweloperka
+Shell (fish+starship), kontenery (Podman), git tooling, edytor, mise — [`dev-environment.md`](./dev-environment.md)
+
+## Bezpieczeństwo i użytkownicy
+sudo, firewall (ufw), szyfrowanie dysku (LUKS), konta — [`security-users.md`](./security-users.md)
+
+## Wsparcie sprzętowe
+Firmware, GPU, laptopy (TLP), audio (PipeWire), Bluetooth — [`hardware-support.md`](./hardware-support.md)
 
 ## Infrastruktura / GitHub
 - Organizacja: **[`corvid-os`](https://github.com/corvid-os)** (kontakt: `corvid-os@proton.me`)
-- ✅ Decyzja: **multi-repo**, nie jeden monolit — każdy komponent osobno do pobrania/wersjonowania:
+- **Multi-repo**, nie jeden monolit:
 
 | Repo | Zawartość |
 |---|---|
 | [`corvid`](https://github.com/corvid-os/corvid) | meta/dokumentacja, ewolucja promptu (`prompt-el/`), docelowo `prompt.md`/`design.md`/`code.md` |
-| [`installer`](https://github.com/corvid-os/installer) | **Corvid Installer** — Python + GTK4/libadwaita, modularny |
-| [`iso`](https://github.com/corvid-os/iso) | profil `archiso` do budowania Live/Install ISO (spina installer, branding, listę apek live) |
-| [`branding`](https://github.com/corvid-os/branding) | logo, ikony, motyw Plymouth/GRUB, tapety, paleta kolorów |
-| [`pkgbuilds`](https://github.com/corvid-os/pkgbuilds) | PKGBUILDy / custom repo pakietów (`corvid-*`, patche gamingowe itd.) |
+| [`installer`](https://github.com/corvid-os/installer) | Corvid Installer |
+| [`iso`](https://github.com/corvid-os/iso) | profil `archiso` |
+| [`branding`](https://github.com/corvid-os/branding) | logo, ikony, motywy, paleta |
+| [`pkgbuilds`](https://github.com/corvid-os/pkgbuilds) | własne repo pakietów |
 
-- TBD: CI/CD do automatycznego budowania ISO i publikowania paczek
+- TBD: CI/CD do automatycznego budowania ISO i publikowania paczek (release pipeline)
 
-## Aplikacje
-- ✅ Zestaw dla **Live ISO** ustalony — patrz [`apps.md`](./apps.md)
-- Zestaw **predefiniowanych aplikacji po instalacji** (przeglądarka, edytor/IDE,
-  narzędzia gamingowe typu Steam/Proton/gamemode, narzędzia dev typu git/kontenery)
-  — TBD, patrz [`apps.md`](./apps.md) (sekcja placeholder)
+## Roadmapa
+Kamienie milowe M0 (design, obecny etap) → M6 (alpha release) — [`roadmap.md`](./roadmap.md)
 
-## Własne repozytorium pakietów
-TBD — czy robimy własne repo (wzorem Chaotic-AUR/CachyOS), co by w nim siedziało
-(np. prebuild AUR, patche do gamingu), jak je hostować.
+## Referencje
+- Notatki z Arch Wiki i innej dokumentacji — [`wiki.md`](./wiki.md)
+- Same linki (bez komentarza) — [`links.md`](./links.md)
 
 ## Struktura projektu (docelowa kompresja)
-Etap roboczy: dużo plików w tym katalogu (ten plik, `naming.md`, `wiki.md`, `links.md`, itd.).
-Cel końcowy: skompresować wszystko do 3 plików:
+Etap roboczy: świadomie dużo plików w tym katalogu — każdy temat osobno, żeby
+łatwo się edytowało i rozwijało bez wzajemnego nadpisywania się. Cel końcowy:
+skompresować wszystko do 3 plików w osobnym, prywatnym repo:
 - `prompt.md` — finalny prompt/spec całego projektu
-- `design.md` — ostateczny design systemu
+- `design.md` — ostateczny, scalony design systemu
 - `code.md` — kod (instalator, konfiguracja archiso, itd.)
+
+## Otwarte tematy (globalne TBD, nie przypisane do jednego pliku)
+- CI/CD dla budowania ISO i publikowania paczek
+- Wersjonowanie wydań ISO (rolling vs snapshoty wydań, schemat numeracji)
+- Licencja projektu (do wyboru — MIT jako naturalny domyślny wybór dla kodu własnego)
