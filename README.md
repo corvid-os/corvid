@@ -1,4 +1,4 @@
-# Nyxarch
+# Corvid OS
 
 Własna dystrybucja Linuksa oparta na Arch Linux — ładny wygląd, gaming, deweloperka
 i codzienny desktop w jednym. GNOME lub Hyprland do wyboru przy instalacji, własny

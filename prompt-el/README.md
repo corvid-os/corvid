@@ -1,6 +1,6 @@
 # prompt-el
 
-Folder roboczy z ewolucją promptu/designu dla **Nyxarch**. Projekt robiony
+Folder roboczy z ewolucją promptu/designu dla **Corvid OS**. Projekt robiony
 wspólnie, na razie w formie roboczej — dużo małych plików, docelowo
 skompresowane do 3 i przeniesione do osobnego, prywatnego repo:
 

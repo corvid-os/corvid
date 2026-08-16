@@ -34,11 +34,17 @@ Arch Linux (rolling release), budowa ISO przez `archiso`.
 - Integracja z **GRUB** przez `grub-btrfs` (bootowanie snapshotów z menu GRUB)
 
 ## Branding
-- **Nazwa: Nyxarch** (decyzja w [`naming.md`](./naming.md))
-- Instalator: **Nyx Installer**, binarka/prefiks: `nyx`
-- Prefiks pakietów własnego repo: `nyxarch-*`
-- Kolorystyka: **fiolet/indygo** jako akcent, ciemny motyw domyślny (z jasnym wariantem opcjonalnym)
-- TBD: logo/maskotka, motyw Plymouth, motyw GRUB, tapety, konkretna paleta (hex), ikony
+- **Nazwa: Corvid OS** (decyzja w [`naming.md`](./naming.md))
+- Instalator: **Corvid Installer**, binarka/prefiks: `corvid`
+- Prefiks pakietów własnego repo: `corvid-*`
+- Kolorystyka: **fiolet/indygo** jako akcent (nawiązanie do iridescencji piór kruka), ciemny motyw domyślny (z jasnym wariantem opcjonalnym)
+- Maskotka: kruk (motyw "corvid")
+- TBD: logo/maskotka (konkretny design), motyw Plymouth, motyw GRUB, tapety, konkretna paleta (hex), ikony
+
+## Infrastruktura / GitHub
+- Repo robocze: [`Lion15official/corvid`](https://github.com/Lion15official/corvid) — publiczne, zawiera folder `prompt-el/` z ewolucją designu
+- Docelowo: organizacja **`corvid-os`** na GitHubie (do założenia ręcznie przez ownera — GitHub nie udostępnia tworzenia orgów przez API na koncie darmowym), repo `corvid` przeniesione tam
+- TBD: czy zostajemy przy jednym repo `corvid` w organizacji, czy dzielimy na osobne repo (installer, archiso profile, custom repo pakietów) — decyzja gdy zaczniemy pisać kod
 
 ## Zestaw predefiniowanych aplikacji
 TBD — do ustalenia jakie apki domyślnie (przeglądarka, edytor/IDE, narzędzia
