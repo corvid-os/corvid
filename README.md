@@ -17,7 +17,6 @@ niezależnie:
 | [`iso`](https://github.com/corvid-os/iso) | profil `archiso` do budowania Live/Install ISO |
 | [`branding`](https://github.com/corvid-os/branding) | logo, ikony, motywy Plymouth/GRUB, tapety, paleta |
 | [`pkgbuilds`](https://github.com/corvid-os/pkgbuilds) | PKGBUILDy / własne repo pakietów (`corvid-*`) |
-| `prompt-el` *(prywatne)* | pełna specyfikacja projektu (`prompt.md`/`design.md`/`code.md`) + historia decyzji |
 
 ## Design
 
