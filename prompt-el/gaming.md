@@ -12,14 +12,25 @@ Rozwinięcie profilu *Gaming* z `installer-steps.md` (krok 8) i `package-managem
 
 ## Sterowniki GPU (auto-detekcja w instalatorze)
 
-| Producent GPU | Pakiety |
-|---|---|
-| NVIDIA (Turing i nowsze) | `nvidia-open-dkms` lub `nvidia-dkms` (do ustalenia próg generacji), `nvidia-utils`, `lib32-nvidia-utils` |
-| AMD | `mesa`, `lib32-mesa`, `vulkan-radeon`, `lib32-vulkan-radeon` |
-| Intel | `mesa`, `lib32-mesa`, `vulkan-intel`, `lib32-vulkan-intel` |
+✅ Zawsze wariant `-dkms` (nigdy goły `nvidia`/`nvidia-open`) — Corvid stawia
+domyślnie na `linux-zen`, a prekompilowane pakiety `nvidia`/`nvidia-open` bez
+DKMS pasują tylko do kernela `linux` (stock).
 
-Detekcja przez `lspci` w backendzie instalatora (`backend/disk.py`-analogiczny
-moduł `backend/hardware.py` — patrz `hardware-support.md`), instalowane w kroku 13.
+| Producent GPU / generacja | Pakiety | Uwaga |
+|---|---|---|
+| NVIDIA — Turing i nowsze (RTX 20xx+, część GTX 16xx) | `nvidia-open-dkms`, `nvidia-utils`, `lib32-nvidia-utils` | ✅ domyślny wybór dla tej generacji — open kernel module, rekomendowany też przez samą NVIDIA |
+| NVIDIA — starsze (GTX 10xx i starsze: Pascal/Maxwell/Kepler) | `nvidia-dkms` (proprietary), `nvidia-utils`, `lib32-nvidia-utils` | open kernel module ich nie wspiera — jedyna opcja |
+| AMD | `mesa`, `lib32-mesa`, `vulkan-radeon`, `lib32-vulkan-radeon` | w pełni open-source, brak dylematu |
+| Intel | `mesa`, `lib32-mesa`, `vulkan-intel`, `lib32-vulkan-intel` | jw. |
+
+Próg generacji NVIDIA wykrywany po PCI ID karty (lista Turing+ znana z
+dokumentacji NVIDIA/Arch Wiki, wbudowana jako statyczna tabela w
+`backend/hardware.py`, nie wykrywana "na żywo" — stabilniejsze niż heurystyki).
+
+Detekcja przez `lspci` w backendzie instalatora (`backend/hardware.py` —
+patrz `hardware-support.md`), instalowane w kroku 13, **niezależnie od
+wybranego profilu** (Gaming/Dev/Minimalny — sterownik GPU to kwestia sprzętu,
+nie profilu).
 
 ## Stack gamingowy (pakiet `corvid-gaming`)
 - **Steam** (multilib wymagane — patrz `package-management.md`)
@@ -38,7 +49,5 @@ moduł `backend/hardware.py` — patrz `hardware-support.md`), instalowane w kro
 - `vkBasalt` — post-processing (reshade-like) dla Vulkan/OpenGL
 
 ## TBD
-- Dokładny próg generacji NVIDIA dla `nvidia-open` vs `nvidia` (proprietary) —
-  open kernel modules wspierane od Turing (RTX 20xx) wzwyż, ale dojrzałość różni się per generacja
 - Czy `lutris` wchodzi do domyślnego `corvid-gaming`, czy zostaje opcjonalny
 - Domyślny skrót do MangoHud toggle (żeby nie kolidował z Hyprland/GNOME keybindami)

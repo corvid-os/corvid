@@ -35,6 +35,22 @@ Rozwinięcie profilu *Dev* z `installer-steps.md` (krok 8) i `package-management
   dostępna/wspierana — użytkownik może ręcznie dodać inny rejestr na własne ryzyko)
 - **neovim** — zawsze obecny jako edytor terminalowy (fallback, szybkie edycje configów)
 
+## NVIDIA / CUDA (gdy wykryto kartę NVIDIA)
+Sterownik GPU (`nvidia-open-dkms`/`nvidia-dkms`) instaluje się zawsze na
+poziomie sprzętu, niezależnie od profilu — patrz `gaming.md` → Sterowniki GPU.
+Profil **Dev** dokłada do tego narzędzia pod pracę z GPU (ML/AI, obliczenia
+równoległe), których Gaming/Minimalny nie potrzebują:
+
+| Pakiet | Rola |
+|---|---|
+| `cuda` | CUDA Toolkit — kompilator `nvcc`, biblioteki do obliczeń na GPU (PyTorch/TensorFlow z akceleracją, itd.) |
+| `cudnn` | biblioteka do sieci neuronowych na GPU (wymagana przez większość frameworków ML) |
+| `nvidia-container-toolkit` | dostęp do GPU **z poziomu kontenerów Podman** (`--device nvidia.com/gpu=all`) — bez tego kontenery nie widzą karty |
+
+Instalowane automatycznie w profilu Dev/Oba **tylko jeśli** instalator wykrył
+GPU NVIDIA w kroku 13 (na AMD/Intel te pakiety nie mają zastosowania — ROCm
+dla AMD to osobny, większy temat, poza zakresem pierwszego wydania).
+
 ## Menedżer wersji językowych
 - **mise** (dawniej rtx) — zamiast preinstalowania konkretnych wersji Python/Node/Go/itd.
   na sztywno, użytkownik dev-profile dostaje `mise` i sam dobiera wersje projektowo
